@@ -1,0 +1,23 @@
+{
+  "name": "degreed-angular-app",
+  "version": "1.0.0",
+  "description": "An AngularJS App To View Batman Movies",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matthewkeatley/degreed-angular-app.git"
+  },
+  "author": "Matthew Keatley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matthewkeatley/degreed-angular-app/issues"
+  },
+  "homepage": "https://github.com/matthewkeatley/degreed-angular-app#readme",
+  "keywords": [
+    "Batman",
+    "Angular"
+  ]
+}
