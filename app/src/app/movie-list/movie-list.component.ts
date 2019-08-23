@@ -28,14 +28,13 @@ export class MovieListComponent implements OnInit {
 				forkJoin(arr).subscribe(results => {
 					this.movies = results.map(result => ({ ...result, _posterURL: (result['Poster'].split('/').pop()) }));
 					console.log(results);
-					this.decadeList = results.reduce((acc, curr) => {
+					const decades:any = results.reduce((acc: any, curr: any) => {
 						const d = new Date(curr.Released);
 						const p = Math.floor((d.getFullYear())/10) * 10;
-						acc.push(p);
+						if (!acc.includes(p)) acc.push(p);
 						return acc;
-					}, [])
-					.filter((val, i, self) => self.indexOf(val) === i)
-					.sort();
+					}, []);
+					this.decadeList = decades.sort();
 				})
 			});
 		}
