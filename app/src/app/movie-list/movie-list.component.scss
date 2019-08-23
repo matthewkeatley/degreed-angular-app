@@ -1,0 +1,81 @@
+
+.movie {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	border: 2px solid black;
+	border-radius: 5px;
+	padding: 16px;
+	background-color:  #e9eaee;
+	margin-bottom: 20px;
+
+	.poster {
+		margin-right: 20px;
+		img {
+			border-radius: 5px;
+			width: 126px;
+			height: 187px;
+		}
+	}
+
+	.info {
+		display: flex;
+		position: relative;
+		flex-direction: column;
+		flex-grow: 1;
+		
+		.title {
+			font-family: "Trebuchet MS";
+			text-align: left;
+			font-weight: bold;
+			font-size: 24px;
+		}
+
+		.specs {
+			font-size: 12px;
+			border-top: 1px solid #666;
+			padding: 5px 0;
+
+			.rated {
+				color: #9da0a5;
+				border: 1px solid #9da0a5;
+				font-family: "Courier New";
+				padding: 1px 6px;
+				border-radius: 5px;
+				float: left;
+			}
+
+			.runtime {
+				margin-left: 20px;
+				float: left;
+			}
+
+			.released {
+				float: right;
+			}
+		}			
+
+		.plot {
+			text-align: left;
+			overflow: auto;
+			font-size:16px;
+			flex-grow: 1;
+			font-family: "Arial";
+		}
+
+		.imdb {
+			flex-grow: 1;
+			
+			button {
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				background-color: #f6b454;
+				color: white;
+				padding: 6px 40px;
+				font-size: 14px;
+				font-weight: bold;
+			}
+		}
+	}
+}

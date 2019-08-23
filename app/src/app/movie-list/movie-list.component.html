@@ -1,0 +1,29 @@
+
+<h2>Movies</h2>
+
+<div class="container content"> 
+<div class="row">
+	<div class="col-md-8 mx-auto">
+		<app-year-selector (notify)="onNotify($event)"></app-year-selector>
+	</div>
+</div>
+<div class= "row" *ngFor="let movie of movies | decade:decade">
+	<div class="col-md-8 mx-auto">
+		<div class="movie">
+			<div class="poster">
+				<img src='/assets/img/{{movie._posterURL}}' />
+			</div>
+			<div class="info">
+				<div class="title">{{ movie.Title }}</div>
+					<div class="specs">
+						<div class="rated">{{ movie.Rated }}</div>
+						<div class="runtime">{{ movie.Runtime }}</div>
+						<div class="released">{{ movie.Released }}</div>
+					</div>
+					<div class="plot">{{ movie.Plot }}</div>
+					<div class="imdb"><button typw="button" class="btn" (click)="onNavigate(movie.imdbID)">View on IMDB</button></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
