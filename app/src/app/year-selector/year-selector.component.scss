@@ -1,0 +1,19 @@
+form {
+	margin-bottom: 20px;
+
+	label {
+		font-size: 16px;
+		padding: 5px 20px;
+	}
+	
+	label {
+		background-color: white;
+		color: #333;
+	}
+
+	label.selected {
+		background-color: #2173af;
+		color: #fff;
+		border: none;
+	}
+}
