@@ -7,10 +7,11 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./year-selector.component.scss']
 })
 export class YearSelectorComponent {
+	@Input() decadeList;
 	@Output() notify = new EventEmitter();
 
 	form = new FormGroup({
-		decade: new FormControl('1990')
+		decade: new FormControl(1980)
 	});
 
 }

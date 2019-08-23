@@ -1,12 +1,9 @@
 <form [formGroup]="form">
 	<div class="col-md-8 mx-auto">
 		<div class="btn-group btn-group-toggle" data-toggle="buttons">
-			<label (click)="notify.emit({ value: '1990' })" [ngClass]="{'selected': form.value.decade === '1990'}" class="btn btn-secondary"  >
-					<input type="radio" formControlName="decade" value="1990" > 1990's
-			</label>
-			<label (click)="notify.emit({ value: '2000' })" [ngClass]="{'selected': form.value.decade === '2000'}" class="btn btn-secondary">
-					<input type="radio" formControlName="decade" value="2000"> 2000's
+			<label *ngFor="let year of decadeList" (click)="notify.emit({ value: year })" [ngClass]="{'selected': form.value.decade == year }" class="btn btn-secondary"  >
+					<input type="radio" formControlName="decade" value="{{year}}" > {{year}}'s
 			</label>
 		</div>
 	</div>
-</form>
+</form> 

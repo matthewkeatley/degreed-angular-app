@@ -8,8 +8,9 @@ import { forkJoin } from 'rxjs';
   styleUrls: ['./movie-list.component.scss']
 })
 export class MovieListComponent implements OnInit {
-		movies = null;
-		decade = '1990';
+		movies = [];
+		decade = 1980;
+		decadeList = [];
 
 		constructor(private apiService: ApiService){}
 
@@ -26,6 +27,15 @@ export class MovieListComponent implements OnInit {
 				const arr = res["Search"].map(({ imdbID }) => this.apiService.getMovie(imdbID));
 				forkJoin(arr).subscribe(results => {
 					this.movies = results.map(result => ({ ...result, _posterURL: (result['Poster'].split('/').pop()) }));
+					console.log(results);
+					this.decadeList = results.reduce((acc, curr) => {
+						const d = new Date(curr.Released);
+						const p = Math.floor((d.getFullYear())/10) * 10;
+						acc.push(p);
+						return acc;
+					}, [])
+					.filter((val, i, self) => self.indexOf(val) === i)
+					.sort();
 				})
 			});
 		}
